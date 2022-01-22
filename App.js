@@ -19,36 +19,42 @@ const app = new App({
   port: process.env.PORT || 3000,
 });
 
+// Listens to incoming messages that contain "hello"
+app.message("hello", async ({ message, say }) => {
+  // say() sends a message to the channel where the event was triggered
+  await say(`Hey there <@${message.user}>!`);
+});
+
 // subscribe to 'app_mention' event in your App config
 // need app_mentions:read and chat:write scopes
-app.event("app_mention", async ({ event, context, client, say }) => {
-  try {
-    let sayThis = randomReply();
-    await say({
-      blocks: [
-        {
-          type: "section",
-          text: {
-            type: "mrkdwn",
-            text: sayThis,
-          },
-          accessory: {
-            type: "button",
-            text: {
-              type: "plain_text",
-              text: "Button",
-              emoji: true,
-            },
-            value: "click_me_123",
-            action_id: "first_button",
-          },
-        },
-      ],
-    });
-  } catch (error) {
-    console.error(error);
-  }
-});
+// app.event("app_mention", async ({ event, context, client, say }) => {
+//   try {
+//     let sayThis = randomReply();
+//     await say({
+//       blocks: [
+//         {
+//           type: "section",
+//           text: {
+//             type: "mrkdwn",
+//             text: sayThis,
+//           },
+// accessory: {
+//   type: "button",
+//   text: {
+//     type: "plain_text",
+//     text: "Button",
+//     emoji: true,
+//   },
+//   value: "click_me_123",
+//   action_id: "first_button",
+// },
+//         },
+//       ],
+//     });
+//   } catch (error) {
+//     console.error(error);
+//   }
+// });
 
 (async () => {
   //start your app
