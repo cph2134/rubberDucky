@@ -10,6 +10,8 @@
   "author": "China Hoffman",
   "license": "ISC",
   "dependencies": {
-    "@slack/bolt": "^3.9.0"
+    "@slack/bolt": "^3.9.0",
+    "dotenv": "^14.2.0",
+    "node-env-run": "^4.0.2"
   }
 }

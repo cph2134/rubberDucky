@@ -1,6 +1,17 @@
 const { App } = require("@slack/bolt");
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 //a collection of responses
+
+//initializes your app with your bot token and signing secret
+const app = new App({
+  token: process.env.SLACK_BOT_TOKEN,
+  signingSecret: process.env.SLACK_SIGNING_SECRET,
+  port: process.env.PORT || 3000,
+});
+
 const response = [
   "That sounds hard",
   "Did you read your error message?",
@@ -11,19 +22,12 @@ const response = [
 const randomReply = () => {
   response[Math.floor(Math.random() * response.length)];
 };
-
-//initializes your app with your bot token and signing secret
-const app = new App({
-  token: process.env.SLACK_BOT_TOKEN,
-  signingSecret: process.env.SLACK_SIGNING_SECRET,
-  port: process.env.PORT || 3000,
-});
+console.log(randomReply());
 
 // Listens to incoming messages that contain "hello"
 app.message("hello", async ({ message, say }) => {
-  let sayThis = randomReply();
   // say() sends a message to the channel where the event was triggered
-  await say(`${sayThis}`);
+  await say("hello back");
 });
 
 // subscribe to 'app_mention' event in your App config
