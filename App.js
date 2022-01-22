@@ -12,7 +12,7 @@ const app = new App({
   port: process.env.PORT || 3000,
 });
 
-const response = [
+const responses = [
   "That sounds hard",
   "Did you read your error message?",
   "When I'm stuck, I like to take a break and drink a glass of water",
@@ -20,14 +20,14 @@ const response = [
 ];
 //grab a random response from the responce array
 const randomReply = () => {
-  response[Math.floor(Math.random() * response.length)];
+  responses[Math.floor(Math.random() * responses.length)];
 };
-console.log(randomReply());
 
 // Listens to incoming messages that contain "hello"
 app.message("hello", async ({ message, say }) => {
   // say() sends a message to the channel where the event was triggered
-  await say(randomReply());
+  let response = randomReply();
+  await say(`${response}`);
 });
 
 // subscribe to 'app_mention' event in your App config
