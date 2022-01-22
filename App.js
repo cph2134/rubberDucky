@@ -23,7 +23,7 @@ const randomReply = () =>
   responses[Math.floor(Math.random() * responses.length)];
 
 // Listens to incoming messages that contain "hello"
-app.message("hello", async ({ message, say }) => {
+app.message(/.*/, async ({ message, say }) => {
   // say() sends a message to the channel where the event was triggered
   let response = randomReply();
   await say(`${response}`);
