@@ -23,7 +23,7 @@ const app = new App({
 app.message("hello", async ({ message, say }) => {
   let sayThis = randomReply();
   // say() sends a message to the channel where the event was triggered
-  await say(sayThis);
+  await say(`${sayThis}`);
 });
 
 // subscribe to 'app_mention' event in your App config
