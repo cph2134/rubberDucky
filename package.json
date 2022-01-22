@@ -2,8 +2,9 @@
   "name": "rubberducky",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "App.js",
   "scripts": {
+    "start": "node App.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "China Hoffman",
