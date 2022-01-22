@@ -27,7 +27,7 @@ console.log(randomReply());
 // Listens to incoming messages that contain "hello"
 app.message("hello", async ({ message, say }) => {
   // say() sends a message to the channel where the event was triggered
-  await say("hello back");
+  await say(randomReply());
 });
 
 // subscribe to 'app_mention' event in your App config
