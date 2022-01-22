@@ -19,9 +19,8 @@ const responses = [
   "Why don't you try explaining it to me very slowly?",
 ];
 //grab a random response from the responce array
-const randomReply = () => {
+const randomReply = () =>
   responses[Math.floor(Math.random() * responses.length)];
-};
 
 // Listens to incoming messages that contain "hello"
 app.message("hello", async ({ message, say }) => {
