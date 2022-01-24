@@ -2,12 +2,11 @@ const { App } = require("@slack/bolt");
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
-
 //initializes your app with your bot token and signing secret
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
-  port: process.env.PORT || 3000,
+  // port: process.env.PORT || 3000,
 });
 
 //random responses
@@ -28,10 +27,10 @@ app.message(/.*/, async ({ message, say }) => {
   await say(`${response}`);
 });
 
-//s
-
 (async () => {
   //start your app
-  await app.start();
-  console.log(`Bolt app is running`);
+  const port = 3000;
+  await app.start(process.env.PORT || port);
+  console.log(`Bolt app is running on port ${port}`);
 })();
+//s

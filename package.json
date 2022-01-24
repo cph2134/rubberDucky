@@ -5,6 +5,7 @@
   "main": "App.js",
   "scripts": {
     "start": "node App.js",
+    "start-dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "China Hoffman",
@@ -12,6 +13,7 @@
   "dependencies": {
     "@slack/bolt": "^3.9.0",
     "dotenv": "^14.2.0",
-    "node-env-run": "^4.0.2"
+    "node-env-run": "^4.0.2",
+    "nodemon": "^2.0.15"
   }
 }
