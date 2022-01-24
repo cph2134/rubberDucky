@@ -23,14 +23,14 @@ const randomReply = () =>
 // Listens for incoming messages with any content
 app.message(/.*/, async ({ message, say }) => {
   // say() sends a message to the channel where the event was triggered
-  let response = randomReply();
+  let response = await randomReply();
   await say(`${response}`);
 });
 
+//s
 (async () => {
   //start your app
   const port = 3000;
   await app.start(process.env.PORT || port);
   console.log(`Bolt app is running on port ${port}`);
 })();
-//s
