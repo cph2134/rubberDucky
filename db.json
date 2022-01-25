@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "info": "Read your error message. If it's long, start at the top, the most useful information is likely to be there."
+    },
+    {
+      "info": "Don't just look at your developer tools console. Error messages from the server or database will show up in your terminal. Check your network tab to see if your http requests are showing up. Look at your Redux store to see if your state is what you expect it to be."
+    },
+    {
+      "info": "Use Postman to debug HTTP requests. Is your data in the shape you expect it to be? Should you be making a GET request or a POST request? Think through your assumptions."
+    },
+    {
+      "info": "Use your debugger. Checkout the rubberDucky Home for resources on learning to use debugging tools!"
+    },
+    {
+      "info": "If some new code is breaking your app, use a combination of console.log(s) and commenting out to isolate the problematic area"
+    }
+  ]
+}
