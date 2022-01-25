@@ -78,7 +78,6 @@ app.event("app_home_opened", async ({ event, client }) => {
             text: {
               type: "mrkdwn",
               text: "<https://www.codecademy.com/resources/blog/how-to-debug-your-code/|Codecademy: How to Debug Your Code>",
-              emoji: true,
             },
           },
           {
